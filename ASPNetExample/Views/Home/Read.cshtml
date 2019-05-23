@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Data Read";
+    ViewData["Message"] = "In this section, you can observe the table with products in the supermarket";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Barcode</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            @foreach (var p in supermarket.products)
+            {
+                <tr>
+                    <td>@p.barcode</td>
+                    <td>@p.name</td>
+                    <td>@p.price</td>
+                </tr>    
+
+            }
+        </tbody>
+    </table>
+
+</div>
